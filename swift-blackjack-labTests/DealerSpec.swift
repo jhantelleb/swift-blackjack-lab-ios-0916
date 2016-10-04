@@ -135,7 +135,7 @@ class DealerSpec: QuickSpec {
                     expect(dealer.house.blackjack).to(beTrue())
                     expect(dealer.house.cards.count).to(equal(2))
                 }
-                
+        
                 it("should not give the house a card if the house must stay") {
                     dealer.house.cards.append(tenOfDiamonds)
                     dealer.house.cards.append(sevenOfClubs)

@@ -12,6 +12,23 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
+    var dealer = Dealer()
+    
+    func playBlackjack(withBet: UInt) {
+        
+        
+        while dealer.house.cards.count <= 5 ||
+           dealer.player.cards.count <= 5 {
+            if dealer.place(bet: withBet) {
+                dealer.turn(house: dealer.house)
+                dealer.turn(house: dealer.player)
+                print(dealer.house.description)
+            }
+        }
+        
+        print(dealer.winner())
+        
+    }
     
     /**
      
